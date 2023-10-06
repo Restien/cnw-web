@@ -1,90 +1,79 @@
-<!--
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charakterbogen</title>
-	<link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+  <title>CnW Charakterbogen</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="bootstrap-5.2.3-dist\css\bootstrap.min.css" rel="stylesheet">
+  <script src="bootstrap-5.2.3-dist\js\bootstrap.bundle.min.js"></script>
 </head>
 <body>
-	<div class="main">
-    <h1>Charakterbogen</h1>
-    
-	<h2>Eigenschaften</h2>
+<div class="container-fluid">
+<p class="mb-0">
+<h1>Cellars 'n' Wyrmlings Charakterbogen</h1>
+</p>
+
+<div class="row">
+  <div class="col"><h2>Eigenschaften</h2>
     <label for="name">Name:</label>
-    <input type="text" id="name"><br>
+    <input type="text" class="form-control" placeholder="Name" id="name">
 
     <label for="race">Rasse:</label>
-    <input type="text" id="race"><br>
+    <input type="text" class="form-control" placeholder="Rasse" id="race">
 
     <label for="alignment">Gesinnung:</label>
-    <input type="text" id="alignment"><br>
-
-    <h2>Werte</h2>
+    <input type="text" class="form-control" placeholder="Gesinnung" id="alignment">
+	</div>
+	
+  <div class="col">
+	<h2>Werte</h2>
     <label for="experience">Erfahrungspunkte:</label>
-    <input type="number" id="experience"><br>
+    <input type="number" class="form-control" id="experience" value="10">
 
     <label for="health">Gesundheitspunkte:</label>
-    <input type="number" id="health"><br>
+    <input type="number" class="form-control" id="health">
 
     <label for="defense">Abwehrpunkte:</label>
-    <input type="number" id="defense"><br>
+    <input type="number" class="form-control" id="defense">
 
     <label for="attack">Angriffspunkte:</label>
-    <input type="number" id="attack"><br>
+    <input type="number" class="form-control" id="attack">
 
 	<h3>Fähigkeiten</h3>
     <label for="strength">Kraft:</label>
-    <input type="number" id="strength"><br>
+    <input type="number" class="form-control" id="strength">
 
     <label for="dexterity">Geschick:</label>
-    <input type="number" id="dexterity"><br>
+    <input type="number" class="form-control" id="dexterity">
 
     <label for="intelligence">Wissen:</label>
-    <input type="number" id="intelligence"><br>
+    <input type="number" class="form-control" id="intelligence">
 
     <label for="perception">Wahrnehmung:</label>
-    <input type="number" id="perception"><br>
+    <input type="number" class="form-control" id="perception">
 
     <label for="charisma">Charisma:</label>
-    <input type="number" id="charisma"><br>
-	
-	<button id="addExpButton">Erfahrungspunkte aktualisieren</button>
-
-    <h2>Sonderfähigkeiten</h2>
-    <textarea id="specialAbilities"></textarea><br>
+    <input type="number" class="form-control" id="charisma">
+  </div>
+  
+  <div class="col">
+	<h2>Sonderfähigkeiten</h2>
+    <div class="form-group">
+		<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+	</div>
 
     <h2>Inventar</h2>
-    <textarea id="inventory"></textarea><br>
+    <div class="form-group">
+		<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+	</div>
 
     <h2>Sonstiges</h2>
-    <textarea id="misc"></textarea><br>
-		
-	<button id="saveButton">Speichern</button>
-	<input type="file" id="loadButton" accept=".json">
-
+    <div class="form-group">
+		<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 	</div>
-</body>
-</html>-->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</head>
-<body>
-
-<div class="row">
-  <div class="col">s</div>
-  <div class="col">a</div>
-  <div class="col">b</div>
+  </div>
+  
 </div>
-
+</div>
 </body>
 </html>
