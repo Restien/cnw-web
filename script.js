@@ -9,6 +9,14 @@ var intelligence = document.getElementById("intelligence");
 var perception = document.getElementById("perception");
 var charisma = document.getElementById("charisma");
 
+var cname = document.getElementById("cname");
+var race = document.getElementById("race");
+var alignment = document.getElementById("alignment");
+
+var spab = document.getElementById("spab");
+var inv = document.getElementById("inv");
+var other = document.getElementById("other");
+
 //previous values
 var php = 10;
 var pdef = 0;
@@ -44,7 +52,7 @@ charisma.addEventListener("change", function() {
     changed(pcha, charisma.value, 2);
 });
 
-function saved()
+function save()
 {
 	php = parseInt(health.value);
     pdef = parseInt(defense.value);
@@ -66,19 +74,16 @@ function changed(oldv, newv, changeval) {
 }
 
 let saveFile = () => {
-            // Get the data from each element on the form.
-            const name = document.getElementById("name");
-			const race = document.getElementById("race");
-			const alignment = document.getElementById("alignment");
 			
-			const spab = document.getElementById("spab");
-			const inv = document.getElementById("inv");
-			const other = document.getElementById("other");
+			spabt = spab.value.replace(/(\r\n|\n|\r)/gm, "");
+			invt = inv.value.replace(/(\r\n|\n|\r)/gm, "");
+			othert = other.value.replace(/(\r\n|\n|\r)/gm, "");
 
+			
             // This variable stores all the data.
-            let data = "name:" + name.value + "\r\nrace:" + race.value + "\r\nalignment:" + alignment.value + "\r\nxp:" + xp.value + "\r\nhp:" + health.value + "\r\ndef:" + defense.value + "\r\natt:" + attack.value + 
-			"\r\nstr:" + strength.value + "\r\ndex:" + dexterity.value + "\r\nint:" + intelligence.value + "\r\nper:" + perception.value + "\r\ncha:" + charisma.value + 
-			"\r\nab:" + spab.value + "\r\ninv:" + inv.value + "\r\nother:" + other.value;
+            let data = "\r" + cname.value + "\r\n" + race.value + "\r\n" + alignment.value + "\r\n" + xp.value + "\r\n" + health.value + "\r\n" + defense.value + "\r\n" + attack.value + 
+			"\r\n" + strength.value + "\r\n" + dexterity.value + "\r\n" + intelligence.value + "\r\n" + perception.value + "\r\n" + charisma.value + 
+			"\r\n" + spabt + "\r\n" + invt + "\r\n" + othert;
 			
             console.log(data); //printing form data into the console
             // Convert the text to BLOB.
@@ -109,3 +114,28 @@ let saveFile = () => {
 
             newLink.click();
         };
+
+document.getElementById('inputfile').addEventListener('change', function(event) {
+    var file = event.target.files[0]; // Greife auf die ausgewählte Datei zu
+    
+    var reader = new FileReader(); // Erstelle einen FileReader
+    
+    reader.onload = function(event) {
+        var contents = event.target.result; // Der Inhalt der Datei wird hier gespeichert
+        var lines = contents.split('\n'); // Teile den Inhalt in Zeilen auf
+        
+        // Jetzt kannst du mit den Zeilen arbeiten
+        for (var i = 0; i < lines.length; i++) {
+            var line = lines[i];
+            console.log("Zeile " + i + ": " + line);
+            
+            // Hier kannst du die Zeile in Variablen umwandeln und weiterverarbeiten
+        }
+        
+        // Optional: Zeige die Zeilen im HTML an
+        
+    };
+    
+    // Lies die Datei als Text
+    reader.readAsText(file);
+});

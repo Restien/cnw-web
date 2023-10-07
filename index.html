@@ -8,7 +8,7 @@
   <!--<script src="bootstrap-5.2.3-dist\js\bootstrap.bundle.min.js"></script>-->
 </head>
 <body>
-<body onload = "saved()" >
+<body onload = "save()" >
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 
   <div class="container-fluid">
@@ -29,73 +29,81 @@
 </nav>
 
 <div class="container-fluid">
-<p class="mb-0">
-<h1>Cellars 'n' Wyrmlings Charakterbogen</h1>
-<button type="button" class="btn btn-dark" onclick="saveFile()">Speichern</button>
-<button type="button" class="btn btn-dark" onclick="load()">Laden</button>
-</p>
-
-<div class="row">
-  <div class="col"><h2>Eigenschaften</h2>
-    <label for="name">Name:</label>
-    <input type="text" class="form-control" placeholder="Name" id="name">
-
-    <label for="race">Rasse:</label>
-    <input type="text" class="form-control" placeholder="Rasse" id="race">
-
-    <label for="alignment">Gesinnung:</label>
-    <input type="text" class="form-control" placeholder="Gesinnung" id="alignment">
+	<p class="mb-0"><h1>Cellars 'n' Wyrmlings Charakterbogen</h1></p>
+	<!--<button type="button" class="btn btn-dark" onclick="load()">Laden</button>-->
+	
+	<div class="d-flex flex-row">
+		<div class="p-2">
+			<button id="savebutton" type="button" class="btn btn-dark" onclick="saveFile()">Speichern</button>
+		</div>
+		<div class="p-2">
+			<label for="inputfile" class="form-label"><b>Charakter laden</b></label>
+			<input type="file" class="form-control" name="inputfile" id="inputfile" value="Laden" accept=".txt"> 
+		</div>
 	</div>
 	
-  <div class="col">
-	<h2>Werte</h2>
-    <label for="xp">Erfahrungspunkte:</label>
-    <input type="number" class="form-control" id="xp" value="0">
 
-    <label for="health">Gesundheitspunkte:</label>
-    <input type="number" class="form-control" id="health" value ="10" onclick="saved()">
+	<div class="row">
+		<div class="col"><h2>Eigenschaften</h2>
+			<label for="cname">Name:</label>
+			<input type="text" class="form-control" placeholder="Name" id="cname">
 
-    <label for="defense">Abwehrpunkte:</label>
-    <input type="number" class="form-control" id="defense" onclick="saved()" value="0">
+			<label for="race">Rasse:</label>
+			<input type="text" class="form-control" placeholder="Rasse" id="race">
 
-    <label for="attack">Angriffspunkte:</label>
-    <input type="number" class="form-control" id="attack" onclick="saved()" value="0">
+			<label for="alignment">Gesinnung:</label>
+			<input type="text" class="form-control" placeholder="Gesinnung" id="alignment">
+		</div>
+		
+	  <div class="col">
+		<h2>Werte</h2>
+		<label for="xp">Erfahrungspunkte:</label>
+		<input type="number" class="form-control" id="xp" value="0">
 
-	<h3>Fähigkeiten</h3>
-    <label for="strength">Kraft:</label>
-    <input type="number" class="form-control" id="strength" onclick="saved()" value="0">
+		<label for="health">Gesundheitspunkte:</label>
+		<input type="number" class="form-control" id="health" value ="10" onclick="save()">
 
-    <label for="dexterity">Geschick:</label>
-    <input type="number" class="form-control" id="dexterity" onclick="saved()" value="0">
+		<label for="defense">Abwehrpunkte:</label>
+		<input type="number" class="form-control" id="defense" onclick="save()" value="0">
 
-    <label for="intelligence">Wissen:</label>
-    <input type="number" class="form-control" id="intelligence" onclick="saved()" value="0">
+		<label for="attack">Angriffspunkte:</label>
+		<input type="number" class="form-control" id="attack" onclick="save()" value="0">
 
-    <label for="perception">Wahrnehmung:</label>
-    <input type="number" class="form-control" id="perception" onclick="saved()" value="0">
+		<h3>Fähigkeiten</h3>
+		<label for="strength">Kraft:</label>
+		<input type="number" class="form-control" id="strength" onclick="save()" value="0">
 
-    <label for="charisma">Charisma:</label>
-    <input type="number" class="form-control" id="charisma" onclick="saved()" value="0">
-  </div>
-  
-  <div class="col">
-	<h2>Sonderfähigkeiten</h2>
-    <div class="form-group">
-		<textarea class="form-control" id="spab" rows="3"></textarea>
+		<label for="dexterity">Geschick:</label>
+		<input type="number" class="form-control" id="dexterity" onclick="save()" value="0">
+
+		<label for="intelligence">Wissen:</label>
+		<input type="number" class="form-control" id="intelligence" onclick="save()" value="0">
+
+		<label for="perception">Wahrnehmung:</label>
+		<input type="number" class="form-control" id="perception" onclick="save()" value="0">
+
+		<label for="charisma">Charisma:</label>
+		<input type="number" class="form-control" id="charisma" onclick="save()" value="0">
+	  </div>
+	  
+	  <div class="col">
+		<h2>Sonderfähigkeiten</h2>
+		<div class="form-group">
+			<textarea class="form-control" id="spab" rows="3"></textarea>
+		</div>
+
+		<h2>Inventar</h2>
+		<div class="form-group">
+			<textarea class="form-control" id="inv" rows="3"></textarea>
+		</div>
+
+		<h2>Sonstiges</h2>
+		<div class="form-group">
+			<textarea class="form-control" id="other" rows="3"></textarea>
+		</div>
+	  </div>
+	  
 	</div>
-
-    <h2>Inventar</h2>
-    <div class="form-group">
-		<textarea class="form-control" id="inv" rows="3"></textarea>
-	</div>
-
-    <h2>Sonstiges</h2>
-    <div class="form-group">
-		<textarea class="form-control" id="other" rows="3"></textarea>
-	</div>
-  </div>
-  
-</div>
 </div>
 <script src="script.js"></script>
 </body>
