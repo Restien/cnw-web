@@ -111,14 +111,3 @@ let saveFile = () => {
 
             newLink.click();
         };
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
