@@ -8,6 +8,7 @@
   <!--<script src="bootstrap-5.2.3-dist\js\bootstrap.bundle.min.js"></script>-->
 </head>
 <body>
+<body onload = "roll()" >
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 
   <div class="container-fluid">
@@ -28,22 +29,55 @@
 </nav>
 
 <div class="container-fluid">
-	<form>
-		<div class="mb-3">
-			<h1>Würfeln</h1>
-			<label for="d4">d4</label>
-			<input class="form-control" type="text" id="d4" readonly>
-		</div>
-		<div class="mb-3">
-			<label for="d6">d6</label>
-			<input class="form-control" type="text" id="d6" readonly>
-		</div>
-		<div class="mb-3">
-			<label for="d8">d8</label>
-			<input class="form-control" type="text" id="d8" readonly>
-		</div>
-		<button type="submit" class="btn btn-dark">Würfeln</button>
-	</form>
+	<div class="mb-3">
+		<h1>Würfeln</h1>
+		<label for="d4">d4</label>
+		<input class="form-control" type="text" id="d4" readonly>
+	</div>
+	<div class="mb-3">
+		<label for="d6">d6</label>
+		<input class="form-control" type="text" id="d6" readonly>
+	</div>
+	<div class="mb-3">
+		<label for="d8">d8</label>
+		<input class="form-control" type="text" id="d8" readonly>
+	</div>
+	<div class="mb-3">
+		<label for="d10">d10</label>
+		<input class="form-control" type="text" id="d10" readonly>
+	</div>
+	<div class="mb-3">
+		<label for="d12">d12</label>
+		<input class="form-control" type="text" id="d12" readonly>
+	</div>
+	<div class="mb-3">
+		<label for="d20">d20</label>
+		<input class="form-control" type="text" id="d20" readonly>
+	</div>
+	<div class="mb-3">
+		<label for="d100">d100</label>
+		<input class="form-control" type="text" id="d100" readonly>
+	</div>
+	<button class="btn btn-dark" onclick="roll()">Würfeln</button>
 </div>
+<script>
+	function roll() {
+    var d4Result = Math.floor(Math.random() * 4) + 1;
+    var d6Result = Math.floor(Math.random() * 6) + 1;
+    var d8Result = Math.floor(Math.random() * 8) + 1;
+    var d10Result = Math.floor(Math.random() * 10);
+    var d12Result = Math.floor(Math.random() * 12) + 1;
+    var d20Result = Math.floor(Math.random() * 20) + 1;
+    var d100Result = Math.floor(Math.random() * 10) * 10;
+
+    document.getElementById("d4").value = d4Result;
+    document.getElementById("d6").value = d6Result;
+    document.getElementById("d8").value = d8Result;
+    document.getElementById("d10").value = d10Result;
+    document.getElementById("d12").value = d12Result;
+    document.getElementById("d20").value = d20Result;
+    document.getElementById("d100").value = d100Result;
+}
+</script>
 </body>
 </html>
