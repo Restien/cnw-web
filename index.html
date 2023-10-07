@@ -31,8 +31,8 @@
 <div class="container-fluid">
 <p class="mb-0">
 <h1>Cellars 'n' Wyrmlings Charakterbogen</h1>
-<button type="button" class="btn btn-dark">Speichern</button>
-<button type="button" class="btn btn-dark">Laden</button>
+<button type="button" class="btn btn-dark" onclick="saveFile()">Speichern</button>
+<button type="button" class="btn btn-dark" onclick="load()">Laden</button>
 </p>
 
 <div class="row">
@@ -49,33 +49,33 @@
 	
   <div class="col">
 	<h2>Werte</h2>
-    <label for="experience">Erfahrungspunkte:</label>
-    <input type="number" class="form-control" id="experience" value="0">
+    <label for="xp">Erfahrungspunkte:</label>
+    <input type="number" class="form-control" id="xp" value="0">
 
     <label for="health">Gesundheitspunkte:</label>
-    <input type="number" class="form-control" id="health" value ="10" onclick="save()">
+    <input type="number" class="form-control" id="health" value ="10" onclick="saved()">
 
     <label for="defense">Abwehrpunkte:</label>
-    <input type="number" class="form-control" id="defense" onclick="save()" value="0">
+    <input type="number" class="form-control" id="defense" onclick="saved()" value="0">
 
     <label for="attack">Angriffspunkte:</label>
-    <input type="number" class="form-control" id="attack" onclick="save()" value="0">
+    <input type="number" class="form-control" id="attack" onclick="saved()" value="0">
 
 	<h3>Fähigkeiten</h3>
     <label for="strength">Kraft:</label>
-    <input type="number" class="form-control" id="strength" onclick="save()" value="0">
+    <input type="number" class="form-control" id="strength" onclick="saved()" value="0">
 
     <label for="dexterity">Geschick:</label>
-    <input type="number" class="form-control" id="dexterity" onclick="save()" value="0">
+    <input type="number" class="form-control" id="dexterity" onclick="saved()" value="0">
 
     <label for="intelligence">Wissen:</label>
-    <input type="number" class="form-control" id="intelligence" onclick="save()" value="0">
+    <input type="number" class="form-control" id="intelligence" onclick="saved()" value="0">
 
     <label for="perception">Wahrnehmung:</label>
-    <input type="number" class="form-control" id="perception" onclick="save()" value="0">
+    <input type="number" class="form-control" id="perception" onclick="saved()" value="0">
 
     <label for="charisma">Charisma:</label>
-    <input type="number" class="form-control" id="charisma" onclick="save()" value="0">
+    <input type="number" class="form-control" id="charisma" onclick="saved()" value="0">
   </div>
   
   <div class="col">

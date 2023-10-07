@@ -44,7 +44,7 @@ charisma.addEventListener("change", function() {
     changed(pcha, charisma.value, 2);
 });
 
-function save()
+function saved()
 {
 	php = parseInt(health.value);
     pdef = parseInt(defense.value);
@@ -54,12 +54,9 @@ function save()
     pint = parseInt(intelligence.value);
     pper = parseInt(perception.value);
     pcha = parseInt(charisma.value);
-	console.log("Werte gespeichert");
 }
 
 function changed(oldv, newv, changeval) {
-	console.log(oldv + " " + newv + " " + changeval);
-	
 	if(parseInt(newv) > parseInt(oldv)){
 		xp.value = parseInt(xp.value)-parseInt(changeval);
 	}
@@ -67,4 +64,61 @@ function changed(oldv, newv, changeval) {
 		xp.value = parseInt(xp.value)+parseInt(changeval);
 	}
 }
+
+let saveFile = () => {
+            // Get the data from each element on the form.
+            const name = document.getElementById("name");
+			const race = document.getElementById("race");
+			const alignment = document.getElementById("alignment");
+			
+			const xp = document.getElementById("xp");
+			
+			const spab = document.getElementById("spab");
+			const inv = document.getElementById("inv");
+			const other = document.getElementById("other");
+
+            // This variable stores all the data.
+            let data = "name:" + name.value + "\r\nrace:" + race.value + "\r\nalignment:" + alignment.value + "\r\nxp:" + xp.value + "\r\nhp:" + health.value + "\r\ndef:" + defense.value + "\r\natt:" + attack.value + 
+			"\r\nstr:" + strength.value + "\r\ndex:" + dexterity.value + "\r\nint:" + intelligence.value + "\r\nper:" + perception.value + "\r\ncha:" + charisma.value + 
+			"\r\nab:" + spab.value + "\r\ninv:" + inv.value + "\r\nother:" + other.value;
+			
+            console.log(data); //printing form data into the console
+            // Convert the text to BLOB.
+            const textToBLOB = new Blob([data], { type: "text/plain" });
+            var filename = new Date();
+            var month =new Date(); //months from 1-12
+            month = month.getMonth();
+
+            var day = new Date();
+            var day = day.getUTCDate();
+
+            var year = new Date();
+            var year = year.getUTCFullYear();
+
+            newdate = year + "/" + month + "/" + day;
+            const sFileName = filename; // The file to save the data.
+
+            let newLink = document.createElement("a");
+            newLink.download = "charakter " + newdate;
+
+            if (window.webkitURL != null) {
+                newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+            } else {
+                newLink.href = window.URL.createObjectURL(textToBLOB);
+                newLink.style.display = "none";
+                document.body.appendChild(newLink);
+            }
+
+            newLink.click();
+        };
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
