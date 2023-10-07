@@ -132,8 +132,21 @@ document.getElementById('inputfile').addEventListener('change', function(event) 
             // Hier kannst du die Zeile in Variablen umwandeln und weiterverarbeiten
         }
         
-        // Optional: Zeige die Zeilen im HTML an
-        
+        cname.value = lines[0];
+		race.value = lines[1];
+        alignment.value = lines[2];
+		xp.value = parseInt(lines[3]);
+		health.value = parseInt(lines[4]);
+		defense.value = parseInt(lines[5]);
+		attack.value = parseInt(lines[6]);
+		strength.value = parseInt(lines[7]);
+		dexterity.value = parseInt(lines[8]);
+		intelligence.value = parseInt(lines[9]);
+		perception.value = parseInt(lines[10]);
+		charisma.value = parseInt(lines[11]);
+		spab.value = lines[12];
+		inv.value = lines[13];
+        other.value = lines[14];
     };
     
     // Lies die Datei als Text
