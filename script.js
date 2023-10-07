@@ -69,7 +69,7 @@ function changed(oldv, newv, changeval) {
 	var pold = parseInt(oldv);
 	var pchange = parseInt(changeval);
 	
-	console.log(pnew + " " + pold + " " + ((pold-pnew)*pchange));
+	//console.log(pnew + " " + pold + " " + ((pold-pnew)*pchange));
 	xp.value = parseInt(xp.value)+((pold-pnew)*pchange);
 	save();
 }
@@ -86,7 +86,7 @@ let saveFile = () => {
 			"\r\n" + strength.value + "\r\n" + dexterity.value + "\r\n" + intelligence.value + "\r\n" + perception.value + "\r\n" + charisma.value + 
 			"\r\n" + spabt + "\r\n" + invt + "\r\n" + othert;
 			
-            console.log(data); //printing form data into the console
+            //console.log(data); //printing form data into the console
             // Convert the text to BLOB.
             const textToBLOB = new Blob([data], { type: "text/plain" });
             var filename = new Date();
@@ -126,12 +126,12 @@ document.getElementById('inputfile').addEventListener('change', function(event) 
         var lines = contents.split('\n'); // Teile den Inhalt in Zeilen auf
         
         // Jetzt kannst du mit den Zeilen arbeiten
-        for (var i = 0; i < lines.length; i++) {
+        /*for (var i = 0; i < lines.length; i++) {
             var line = lines[i];
             console.log("Zeile " + i + ": " + line);
             
             // Hier kannst du die Zeile in Variablen umwandeln und weiterverarbeiten
-        }
+        }*/
         
         cname.value = lines[0];
 		race.value = lines[1];
