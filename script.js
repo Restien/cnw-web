@@ -65,12 +65,11 @@ function save()
 }
 
 function changed(oldv, newv, changeval) {
-	if(parseInt(newv) > parseInt(oldv)){
-		xp.value = parseInt(xp.value)-parseInt(changeval);
-	}
-	else if(parseInt(newv) < parseInt(oldv)){
-		xp.value = parseInt(xp.value)+parseInt(changeval);
-	}
+	var pnew = parseInt(newv);
+	var pold = parseInt(oldv);
+	var pchange = parseInt(changeval);
+	
+	xp.value = parseInt(xp.value)+((pold-pnew)*pchange);
 }
 
 let saveFile = () => {
