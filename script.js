@@ -1,5 +1,5 @@
 //elements
-var xp = document.getElementById("experience"); 
+var xp = document.getElementById("xp"); 
 var health = document.getElementById("health");
 var defense = document.getElementById("defense");
 var attack = document.getElementById("attack");
@@ -70,8 +70,6 @@ let saveFile = () => {
             const name = document.getElementById("name");
 			const race = document.getElementById("race");
 			const alignment = document.getElementById("alignment");
-			
-			const xp = document.getElementById("xp");
 			
 			const spab = document.getElementById("spab");
 			const inv = document.getElementById("inv");
