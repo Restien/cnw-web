@@ -69,7 +69,9 @@ function changed(oldv, newv, changeval) {
 	var pold = parseInt(oldv);
 	var pchange = parseInt(changeval);
 	
+	console.log(pnew + " " + pold + " " + ((pold-pnew)*pchange));
 	xp.value = parseInt(xp.value)+((pold-pnew)*pchange);
+	save();
 }
 
 let saveFile = () => {
